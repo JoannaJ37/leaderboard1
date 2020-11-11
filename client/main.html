@@ -1,0 +1,55 @@
+<head> <title>Best Movies Ranking</title>
+  </head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary text-white mb-4">
+        <a class="navbar-brand" href="/">Best Movies Ranking</a>
+    </nav>
+     <div class="container"> {{> leaderboard}}</div>
+</body>
+
+<template name="leaderboard">
+        <br>
+        <h1 class="display-4">Welcome to Best Movies Ranking</h1>
+        <p class="mb-4">A simple reactive leaderboard application made with MeteorJS. </p>
+        <p class="mb-4">Select a movie from table below and click a button for action or submit a new title.</p><br>
+       
+        {{> addMovieForm}}<br><br>
+
+        <table class="table table-hover">
+                <thead>
+                    <tr> 
+                        <th>Movie title</th>
+                        <th>Director</th>
+                        <th></th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {{#each movie}}
+                        <tr class="movie {{selectedClass}}"> 
+                            <td>{{title}}</td>
+                            <td>{{director}}</td>
+                            <td></td>
+                            <td>{{score}}</td>
+                        </tr>
+                        {{/each}}
+                </tbody> 
+            </table>
+            <input type="button" class="increment btn btn-success" value="Give 5 Points">
+            <input type="button" class="decrement btn btn-warning" value="Take 5 Points">
+            <input type="button" class="remove btn btn-danger" value="Remove movie">
+</template>
+
+<template name="addMovieForm"> 
+        <form>
+            <div class="form-group">
+                <label for="title">Movie title</label>
+                <input type="text" name="movieTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="title">Director</label>
+                    <input type="text" name="movieDirector" class="form-control">
+                </div>
+            <input type="submit" value="Submit Movie" class="btn btn-primary">
+        </form>
+</template>
