@@ -10,4 +10,4 @@ A simple reactive leaderboard application made with [MeteorJS](https://www.meteo
 4. Test the app at [localhost:3000](http://localhost:3000).
 
 ### Screens
-![Screen]()
+![Screen](meteor.png)
