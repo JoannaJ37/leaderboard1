@@ -1,4 +1,4 @@
-# meteor-top-songs-leaderboard
+# Meteor Movie Ranking App
 A simple reactive leaderboard application made with [MeteorJS](https://www.meteor.com).
 
 ### How to run?
